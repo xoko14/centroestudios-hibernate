@@ -24,6 +24,9 @@ public class Table<T> {
 
     private void setRows(T obj){
         rows = new ArrayList<>();
+        if(obj == null){
+            return;
+        }
         for(Field field: obj.getClass().getDeclaredFields()){
             rows.add(new Row(field));
         }
@@ -82,6 +85,8 @@ public class Table<T> {
 
     @Override
     public String toString() {
+        if(values.get(0) == null) return "TABLA VACÍA\n";
+
         String text = style.getVertical();
         for(Row row : rows){
             String fieldValue = row.getName();
