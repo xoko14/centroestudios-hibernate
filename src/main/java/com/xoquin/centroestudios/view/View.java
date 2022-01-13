@@ -10,6 +10,10 @@ public class View {
                                 "2) Mostar un alumno en concreto.\n"+
                                 "3) Mostar todas las asignaturas.\n"+
                                 "4) Mostar una asignatura en concreto.\n"+
+                                "5) Mostrar todos los profesores.\n"+
+                                "6) Mostar un profesor en concreto.\n"+
+                                "7) Mostrar todos los departamentos.\n"+
+                                "8) Mostar un departamento en concreto.\n"+
                                 "0) Salir.\n";
 
     public static String avisoContinuar = "---PRESIONA ENTER PARA CONTINUAR---";

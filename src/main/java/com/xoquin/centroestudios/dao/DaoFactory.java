@@ -12,4 +12,12 @@ public class DaoFactory {
     public AsignaturaDAO getAsignaturaDAO(){
         return new AsignaturaDAO();
     }
+
+    public ProfesorDAO getProfesorDAO(){
+        return new ProfesorDAO();
+    }
+
+    public DepartamentoDAO getDepartamentoDAO(){
+        return new DepartamentoDAO();
+    }
 }

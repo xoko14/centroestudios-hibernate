@@ -11,5 +11,7 @@
 
         <mapping class="com.xoquin.centroestudios.model.Alumno"/>
         <mapping class="com.xoquin.centroestudios.model.Asignatura"/>
+        <mapping class="com.xoquin.centroestudios.model.Profesor"/>
+        <mapping class="com.xoquin.centroestudios.model.Departamento"/>
     </session-factory>
 </hibernate-configuration>

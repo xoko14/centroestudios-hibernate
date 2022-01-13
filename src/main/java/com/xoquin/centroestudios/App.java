@@ -2,8 +2,12 @@ package com.xoquin.centroestudios;
 
 import com.xoquin.centroestudios.model.Alumno;
 import com.xoquin.centroestudios.model.Asignatura;
+import com.xoquin.centroestudios.model.Departamento;
+import com.xoquin.centroestudios.model.Profesor;
 import com.xoquin.centroestudios.session.AlumnoService;
 import com.xoquin.centroestudios.session.AsignaturaService;
+import com.xoquin.centroestudios.session.DepartamentoService;
+import com.xoquin.centroestudios.session.ProfesorService;
 import com.xoquin.centroestudios.view.Table;
 import com.xoquin.centroestudios.view.View;
 
@@ -16,6 +20,8 @@ public class App
     private static View view = new View(System.in, System.out);
     private static AlumnoService alumnoService = new AlumnoService();
     private static AsignaturaService asignaturaService = new AsignaturaService();
+    private static ProfesorService profesorService = new ProfesorService();
+    private static DepartamentoService departamentoService = new DepartamentoService();
 
     public static void main( String[] args )
     {
@@ -38,8 +44,26 @@ public class App
                 break;
 
             case '4':
-                query = view.askInt("ID de asignatura.");
+                query = view.askInt("ID de asignatura");
                 view.printTable(new Table<Asignatura>(asignaturaService.findById(query)));
+                break;
+
+            case '5':
+                view.printTable(new Table<Profesor>(profesorService.findAll()));
+                break;
+
+            case '6':
+                query = view.askInt("ID de profesor");
+                view.printTable(new Table<Profesor>(profesorService.findById(query)));
+                break;
+
+            case '7':
+                view.printTable(new Table<Departamento>(departamentoService.findAll()));
+                break;
+
+            case '8':
+                query = view.askInt("ID de departamento");
+                view.printTable(new Table<Departamento>(departamentoService.findById(query)));
                 break;
 
             case '0':

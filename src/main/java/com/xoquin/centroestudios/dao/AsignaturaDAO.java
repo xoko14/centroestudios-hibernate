@@ -7,7 +7,7 @@ import com.xoquin.centroestudios.model.Asignatura;
 import org.hibernate.Session;
 
 public class AsignaturaDAO implements Dao<Asignatura>{
-     @Override
+    @Override
     public void persist(Asignatura entity, Session session) {
         session.persist(entity);
     }
