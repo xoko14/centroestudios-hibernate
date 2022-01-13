@@ -8,4 +8,8 @@ public class DaoFactory {
     public AlumnoDAO getAlumnoDao(){
         return new AlumnoDAO();
     }
+
+    public AsignaturaDAO getAsignaturaDAO(){
+        return new AsignaturaDAO();
+    }
 }

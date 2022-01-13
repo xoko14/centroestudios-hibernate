@@ -7,8 +7,6 @@ import com.xoquin.centroestudios.model.Alumno;
 import org.hibernate.Session;
 
 public class AlumnoDAO implements Dao<Alumno>{
-    public static Class<Alumno> alclass = Alumno.class;
-
     @Override
     public void persist(Alumno entity, Session session) {
         session.persist(entity);
@@ -38,13 +36,7 @@ public class AlumnoDAO implements Dao<Alumno>{
 
     @Override
     public void deleteAll(Session session) {
-        findAll(session).forEach(alumno -> { delete(alumno, session); });
+        findAll(session).forEach(entity -> { delete(entity, session); });
         
-    }
-
-    @Override
-    public Class<Alumno> getObjectClass() {
-        return alclass;
-    }
-    
+    }  
 }

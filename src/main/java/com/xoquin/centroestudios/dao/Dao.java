@@ -17,7 +17,5 @@ public interface Dao<T> {
     public List<T> findAll(Session session);
 
     public void deleteAll(Session sesion);
-
-    public Class<T> getObjectClass();
 }
 

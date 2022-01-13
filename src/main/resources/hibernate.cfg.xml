@@ -10,5 +10,6 @@
         <property name="connection.url">jdbc:mariadb://localhost:3306/centro_estudios</property>
 
         <mapping class="com.xoquin.centroestudios.model.Alumno"/>
+        <mapping class="com.xoquin.centroestudios.model.Asignatura"/>
     </session-factory>
 </hibernate-configuration>
