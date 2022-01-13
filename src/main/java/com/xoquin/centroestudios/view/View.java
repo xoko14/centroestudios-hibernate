@@ -14,6 +14,7 @@ public class View {
                                 "6) Mostar un profesor en concreto.\n"+
                                 "7) Mostrar todos los departamentos.\n"+
                                 "8) Mostar un departamento en concreto.\n"+
+                                "9) Buscar asignaturas por nombre.\n"+
                                 "0) Salir.\n";
 
     public static String avisoContinuar = "---PRESIONA ENTER PARA CONTINUAR---";

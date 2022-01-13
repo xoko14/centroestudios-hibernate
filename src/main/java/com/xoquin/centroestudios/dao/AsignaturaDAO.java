@@ -2,6 +2,8 @@ package com.xoquin.centroestudios.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import com.xoquin.centroestudios.model.Asignatura;
 
 import org.hibernate.Session;
@@ -38,5 +40,12 @@ public class AsignaturaDAO implements Dao<Asignatura>{
     public void deleteAll(Session session) {
         findAll(session).forEach(entity -> { delete(entity, session); });
         
-    }  
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<Asignatura> searchByName(String s, Session session){
+        Query q = session.createQuery("from Asignatura where lower(nombre) like :regex");
+        q.setParameter("regex", "%"+s+"%");
+        return q.getResultList();
+    }
 }

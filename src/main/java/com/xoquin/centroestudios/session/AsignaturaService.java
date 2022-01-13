@@ -58,4 +58,11 @@ public class AsignaturaService implements Service<Asignatura>{
         asignaturaDao.deleteAll(sesionFactory.getCurrentSession());
         sesionFactory.closeCurrentSessionwithTransaction();
     }
+
+    public List<Asignatura> searchByName(String s){
+        sesionFactory.openCurrentSession();
+        List<Asignatura> entities = asignaturaDao.searchByName(s, sesionFactory.getCurrentSession());
+        sesionFactory.closeCurrentSession();
+        return entities;
+    }
 }

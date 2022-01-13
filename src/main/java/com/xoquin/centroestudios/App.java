@@ -66,6 +66,10 @@ public class App
                 view.printTable(new Table<Departamento>(departamentoService.findById(query)));
                 break;
 
+            case '9':
+                String search = view.askString("Término de búsqueda");
+                view.printTable(new Table<Asignatura>(asignaturaService.searchByName(search)));
+
             case '0':
                 finished = true;
                 break;
