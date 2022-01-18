@@ -8,7 +8,7 @@ public class Row {
 
     public Row(Field field) {
         this.name = field.getName();
-        maxLength = this.name.length();
+        maxLength = this.name.length()+2;
     }
 
     public String getName() {

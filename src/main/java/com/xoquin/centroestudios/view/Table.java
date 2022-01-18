@@ -40,7 +40,7 @@ public class Table<T> {
                         methodname = methodname.substring(0, 1).toLowerCase() + methodname.substring(1);
                         if(row.getName().equals(methodname)){
                             try {
-                                int valLength = method.invoke(object).toString().length();
+                                int valLength = method.invoke(object).toString().length()+2;
                                 if(valLength > row.getMaxLength()) row.setMaxLength(valLength);
                             } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                                 e.printStackTrace();
@@ -64,7 +64,7 @@ public class Table<T> {
                         methodname = methodname.substring(0, 1).toLowerCase() + methodname.substring(1);
                         if(row.getName().equals(methodname)){
                             try {
-                                String cellValue = method.invoke(value).toString();
+                                String cellValue = " "+method.invoke(value).toString()+" ";
                                 while(cellValue.length() < row.getMaxLength()){
                                     cellValue+=" ";
                                 }
@@ -89,7 +89,7 @@ public class Table<T> {
 
         String text = style.getVertical();
         for(Row row : rows){
-            String fieldValue = row.getName();
+            String fieldValue = " "+row.getName()+" ";
             while(fieldValue.length() < row.getMaxLength()){
                 fieldValue+=" ";
             }
