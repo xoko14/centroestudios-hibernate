@@ -5,7 +5,17 @@ public class TableStyle {
     private String horizontal;
     private String cross;
 
-    public TableStyle(String vertical, String horizontal, String cross) {
+    private static TableStyle tableStyle = new TableStyle("|", "-", "+");
+    public static TableStyle getTableStyle(){
+        return tableStyle;
+    }
+    public static void setTableStyle(String vertical, String horizontal, String cross){
+        tableStyle.vertical = vertical;
+        tableStyle.horizontal = horizontal;
+        tableStyle.cross = cross;
+    }
+
+    private TableStyle(String vertical, String horizontal, String cross) {
         this.vertical = vertical;
         this.horizontal = horizontal;
         this.cross = cross;

@@ -9,7 +9,7 @@ import java.util.List;
 public class Table<T> {
     private List<Row> rows;
     private List<T> values;
-    private TableStyle style = new TableStyle("|", "-", "+");
+    private TableStyle style = TableStyle.getTableStyle();
 
     public Table(T obj){
         values = new ArrayList<>();
@@ -55,7 +55,7 @@ public class Table<T> {
     private String getBody(){
         String text = "";
         for(T value: values){
-            text+="|";
+            text+=style.getVertical();
             Method[] methods = value.getClass().getMethods();
             for(Row row : rows){
                 for(Method method: methods){
@@ -68,7 +68,7 @@ public class Table<T> {
                                 while(cellValue.length() < row.getMaxLength()){
                                     cellValue+=" ";
                                 }
-                                text+=cellValue+"|";
+                                text+=cellValue+style.getVertical();
                             }
                             catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                                 e.printStackTrace();

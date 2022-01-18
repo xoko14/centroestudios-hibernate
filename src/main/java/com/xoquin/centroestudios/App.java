@@ -9,6 +9,7 @@ import com.xoquin.centroestudios.session.AsignaturaService;
 import com.xoquin.centroestudios.session.DepartamentoService;
 import com.xoquin.centroestudios.session.ProfesorService;
 import com.xoquin.centroestudios.view.Table;
+import com.xoquin.centroestudios.view.TableStyle;
 import com.xoquin.centroestudios.view.View;
 
 /**
@@ -89,6 +90,13 @@ public class App
                     asignaturaService.delete(asignaturaService.findById(id));
                     view.showMessage("Asignatura borrada correctamente.");
                 }
+                break;
+
+            case '*':
+                String hori = Character.toString(view.askChar("Caracter horizontal"));
+                String vert = Character.toString(view.askChar("Caracter vertical"));
+                String esqui = Character.toString(view.askChar("Caracter vertical"));
+                TableStyle.setTableStyle(vert, hori, esqui);
                 break;
 
             case '0':

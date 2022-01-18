@@ -17,6 +17,7 @@ public class View {
                                 "9) Buscar asignaturas por nombre.\n"+
                                 "A) Añadir asignatura.\n"+
                                 "B) Eliminar asignatura.\n"+
+                                "*) Personalizar tabla\n"+
                                 "0) Salir.\n";
 
     public static String avisoContinuar = "---PRESIONA ENTER PARA CONTINUAR---";
@@ -70,6 +71,12 @@ public class View {
             }
         }
         return 0;
+    }
+
+    public char askChar(String question){
+        out.println(question);
+        out.print(promptChar);
+        return sc.nextLine().charAt(0);
     }
 
     public void showMessage(String message){
