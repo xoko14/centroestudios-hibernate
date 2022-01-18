@@ -95,7 +95,7 @@ public class App
             case '*':
                 String hori = Character.toString(view.askChar("Caracter horizontal"));
                 String vert = Character.toString(view.askChar("Caracter vertical"));
-                String esqui = Character.toString(view.askChar("Caracter vertical"));
+                String esqui = Character.toString(view.askChar("Caracter de esquina"));
                 TableStyle.setTableStyle(vert, hori, esqui);
                 break;
 
