@@ -25,10 +25,12 @@ public class App
 
     public static void main( String[] args )
     {
-     boolean finished = false;
-     int query;
+    boolean finished = false;
+    int query;
 
-     while(!finished){
+    view.clear();
+
+    while(!finished){
          switch(view.menuAsk()){
             case '1':
                 view.printTable(new Table<Alumno>(alumnoService.findAll()));
@@ -69,6 +71,25 @@ public class App
             case '9':
                 String search = view.askString("Término de búsqueda");
                 view.printTable(new Table<Asignatura>(asignaturaService.searchByName(search)));
+                break;
+            
+            case 'a':
+                String nombreAsig = view.askString("Nombre de asignatura");
+                Asignatura asig = new Asignatura();
+                asig.setNombre(nombreAsig);
+                asignaturaService.persist(asig);
+                view.showMessage("Asignatura añadida correctamente.");
+                break;
+
+            case 'b':
+                int id = view.askInt("ID de asignatura");
+                Asignatura asigToDelete = asignaturaService.findById(id);
+                if(asigToDelete == null) view.showMessage("Asignatura no encotrada en la base de datos.");
+                else {
+                    asignaturaService.delete(asignaturaService.findById(id));
+                    view.showMessage("Asignatura borrada correctamente.");
+                }
+                break;
 
             case '0':
                 finished = true;

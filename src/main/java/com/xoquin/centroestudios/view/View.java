@@ -15,6 +15,8 @@ public class View {
                                 "7) Mostrar todos los departamentos.\n"+
                                 "8) Mostar un departamento en concreto.\n"+
                                 "9) Buscar asignaturas por nombre.\n"+
+                                "A) Añadir asignatura.\n"+
+                                "B) Eliminar asignatura.\n"+
                                 "0) Salir.\n";
 
     public static String avisoContinuar = "---PRESIONA ENTER PARA CONTINUAR---";
@@ -32,16 +34,18 @@ public class View {
     }
 
     public void printTable(Table<?> table){
+        clear();
         out.print(table);
         out.println(avisoContinuar);
         sc.nextLine();
+        clear();
 
     }
 
     public char menuAsk(){
         out.print(menu);
         out.print(promptChar);
-        return sc.nextLine().charAt(0);
+        return sc.nextLine().toLowerCase().charAt(0);
     }
 
     public String askString(String question){
@@ -70,5 +74,10 @@ public class View {
 
     public void showMessage(String message){
         out.println(message);
+    }
+
+    public void clear(){
+        out.print("\033[H\033[2J");  
+        out.flush();
     }
 }
